@@ -1,5 +1,12 @@
 # hazy-dash
 
+Live at https://dash.hz.nknighta.me
+
+> **Source of truth:** `apps/hazy-dash` in the [hazy monorepo](https://github.com/nk4dev/hazy).
+> [`nk4dev/hazy-dash`](https://github.com/nk4dev/hazy-dash) is a read-only export of that
+> directory — it depends on the monorepo's `@repo/api-client` and `tsconfig.base.json`,
+> so it doesn't build on its own. Make changes in the monorepo.
+
 A one-screen home dashboard for Hazy: weather, today's three, this week's
 reading, recent saves, quick save (with paste) and Ask.
 

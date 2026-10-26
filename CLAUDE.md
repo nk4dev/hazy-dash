@@ -1,6 +1,6 @@
 # hazy-dash
 
-A home-screen dashboard for Hazy (Next 16, `:3200`). Everything renders on the
+A home-screen dashboard for Hazy (Next 16, `:3200`), deployed at `dash.hz.nknighta.me`. Everything renders on the
 client; there are no route handlers, no Clerk and no DB.
 
 - **It is a connected app, not a hazy session.** `src/lib/connect.ts` runs the
@@ -24,8 +24,13 @@ client; there are no route handlers, no Clerk and no DB.
   `nk4dev-pc-test` tunnel (`allowedDevOrigins`, `no-store` + per-start
   `deploymentId` in `next.config.ts`). Connecting from there makes the tunnel
   origin the token's `clientOrigin`, so it gets its own token.
-- Not deployed. If it gets a domain, add OpenNext/wrangler like `apps/hazy`.
+- Deploy: OpenNext → Cloudflare Worker `hazy-dash` (`wrangler.jsonc`, custom domain
+  `dash.hz.nknighta.me`). `bun run cf:build && bun run cf:deploy` from this directory;
+  no secrets or vars needed (production URLs are the defaults in `src/lib/env.ts`).
 
 `bun run dev --filter=hazy-dash`, `bun run test` (PKCE vector), `check-types`, `lint`.
 Fonts come from a Google Fonts `<link>` in `layout.tsx`, not `next/font`: the
 `next/font/google` Turbopack dev loader failed intermittently here.
+
+`github.com/nk4dev/hazy-dash` is an export of this directory, not a second
+source: edit here, then copy the directory over and push there.

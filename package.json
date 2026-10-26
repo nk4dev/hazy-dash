@@ -10,7 +10,10 @@
     "format": "biome format --write .",
     "check": "biome check --write .",
     "check-types": "tsc --noEmit",
-    "test": "bun test src/"
+    "test": "bun test src/",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:deploy": "opennextjs-cloudflare deploy",
+    "cf:preview": "opennextjs-cloudflare preview"
   },
   "dependencies": {
     "@repo/api-client": "workspace:*",
@@ -24,12 +27,14 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.9",
+    "@opennextjs/cloudflare": "^1.20.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.123.0"
   }
 }
